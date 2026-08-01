@@ -1,0 +1,48 @@
+{
+    "name": "conference-tools/branding",
+    "description": "Shared branding for the conference-tools Laravel packages: the BrandingProvider contract consumed by bof-scheduler and registration, plus the host-side branding management UI (site name, color themes, logo, PWA colors). The host app installs this alongside whichever conference-tools packages it uses.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "keywords": ["laravel", "conference", "branding", "theme"],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "illuminate/database": "^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^9.0 || ^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ConferenceTools\\Branding\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ConferenceTools\\Branding\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ],
+        "test:coverage": [
+            "phpunit --coverage-html coverage/html --coverage-clover coverage/clover.xml"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ConferenceTools\\Branding\\BrandingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
